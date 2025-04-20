@@ -25,7 +25,7 @@ min(Op, Ref, Min) :-
         (Op = ('>'),  findall(Z, (pay(_, _, Z), Z >  Ref), List), min_list(List, Min));
         (Op = ('>='), findall(Z, (pay(_, _, Z), Z >= Ref), List), min_list(List, Min));
         (Op = ('<'),  findall(Z, (pay(_, _, Z), Z <  Ref), List), min_list(List, Min));
-        (Op = ('<='), findall(Z, (pay(_, _, Z), Z =< Ref), List))
+        (Op = ('<='), findall(Z, (pay(_, _, Z), Z =< Ref), List), min_list(List, Min))
     ).
 
 max(Op, Ref, Max) :-
@@ -35,7 +35,7 @@ max(Op, Ref, Max) :-
         (Op = ('>'),  findall(Z, (pay(_, _, Z), Z >  Ref), List), max_list(List, Max));
         (Op = ('>='), findall(Z, (pay(_, _, Z), Z >= Ref), List), max_list(List, Max));
         (Op = ('<'),  findall(Z, (pay(_, _, Z), Z <  Ref), List), max_list(List, Max));
-        (Op = ('<='), findall(Z, (pay(_, _, Z), Z =< Ref), List))
+        (Op = ('<='), findall(Z, (pay(_, _, Z), Z =< Ref), List), max_list(List, Max))
     ).
 
 total(Op, Ref, Total) :-
@@ -45,7 +45,7 @@ total(Op, Ref, Total) :-
         (Op = ('>'),  findall(Z, (pay(_, _, Z), Z >  Ref), List), sum_list(List, Total));
         (Op = ('>='), findall(Z, (pay(_, _, Z), Z >= Ref), List), sum_list(List, Total));
         (Op = ('<'),  findall(Z, (pay(_, _, Z), Z <  Ref), List), sum_list(List, Total));
-        (Op = ('<='), findall(Z, (pay(_, _, Z), Z =< Ref), List))
+        (Op = ('<='), findall(Z, (pay(_, _, Z), Z =< Ref), List), sum_list(List, Total))
     ).
 
 average_list([], 0).
