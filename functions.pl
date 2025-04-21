@@ -62,5 +62,5 @@ avg(Op, Ref, Avg) :-
         (Op = ('>'),  findall(Z, (pay(_, _, Z), Z >  Ref), List), average_list(List, Avg));
         (Op = ('>='), findall(Z, (pay(_, _, Z), Z >= Ref), List), average_list(List, Avg));
         (Op = ('<'),  findall(Z, (pay(_, _, Z), Z <  Ref), List), average_list(List, Avg));
-        ((Op = '<='), findall(Z, (pay(_, _, Z), Z =< Ref), List), average_list(List, Avg))
+        (Op = ('<='), findall(Z, (pay(_, _, Z), Z =< Ref), List), average_list(List, Avg))
     ).
